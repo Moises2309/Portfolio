@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloock&family=Noto+Sans:wght@400;700;900&display=swap");
+
+/* font-family: 'Gloock', serif;
+font-family: 'Noto Sans', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --text-color: #0e0051;
+    --text-color-2: #fff;
+    --bg-color: #004f73;
+    --bg-header: rgba(208, 217, 226, .8);
+    --header-title: #fff;
+    --btn-title: #466f8e;
+    --btn-link: #a2b4c5;
+    --btn-likdn: #0a66c2;
+    --btn-git: #0d1117;
+}
+
+/* html {
+    font-size: 62.5%;
+} */
+
+body {
+    color: var(--text-color);
+    font-family: "Noto Sans", sans-serif;
+}
+
+.btn {
+    background-color: #000000;
+    text-align: center;
+    text-decoration: none;
+    width: 130px;
+    height: 50px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 70px;
+    display: inline-block;
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    height: 50px;
+    background-color: var(--bg-header);
+    padding: 0px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header a.titleLink,
+li a {
+    text-decoration: none;
+}
+
+header a.titleLink {
+    color: var(--header-title);
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+li a:hover {
+    background-color: var(--btn-link);
+    border: 1px solid yellow;
+}
+
+li a {
+    color: var(--text-color);
+    padding: 14px;
+}
+
+li a:hover {
+    color: var(--header-title);
+}
+
+/* Seções */
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+.inicio {
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.blob1 {
+    max-width: 550px;
+    position: absolute;
+    top: -25px;
+    left: -215px;
+    rotate: 10deg;
+    z-index: 1;
+}
+
+.blob2 {
+    max-width: 510px;
+    position: absolute;
+    top: 170px;
+    right: 0px;
+    rotate: -100deg;
+    z-index: 1;
+}
+
+.container {
+    width: 85%;
+    height: 90vh;
+    margin: auto;
+    padding: 100px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.subcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 55px; */
+}
+
+/* .introduction {
+    background-color: var(--header-title);
+} */
+
+.introduction .text {
+    color: var(--text-color-2);
+    max-width: 600px;
+    margin-top: 40px;
+}
+
+.introduction .text h1 {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.introduction .text h1 span {
+    color: aqua;
+    font-family: "Gloock", serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.introduction .text p {
+    font-size: 22px;
+    letter-spacing: 1.3px;
+    line-height: 30px;
+}
+
+.introduction .text p:last-child {
+    margin-top: 15px;
+}
+
+.introduction .buttons {
+    margin-top: 120px;
+    margin-left: 40px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-sobre {
+    background-color: #fff;
+    color: var(--text-color);
+}
+
+.btn-linkedin {
+    color: var(--text-color-2);
+    background-color: var(--btn-likdn);
+}
+
+.btn-github {
+    color: var(--text-color-2);
+    background-color: var(--btn-git);
+}
