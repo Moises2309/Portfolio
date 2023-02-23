@@ -11,6 +11,7 @@ font-family: 'Noto Sans', sans-serif; */
     --text-color-2: #fff;
     --bg-color: #004f73;
     --bg-header: rgba(208, 217, 226, .8);
+    --bg-header-pj: rgb(255, 255, 255);
     --header-title: #fff;
     --btn-title: #466f8e;
     --btn-link: #a2b4c5;
@@ -111,7 +112,7 @@ section {
     top: 170px;
     right: 0px;
     rotate: -100deg;
-    z-index: 1;
+    z-index: -1;
 }
 
 .container {
@@ -120,13 +121,13 @@ section {
     margin: auto;
     padding: 100px 0;
     position: relative;
-    z-index: 10;
+    z-index: 100;
 }
 
 .subcontainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* gap: 55px; */
+    gap: 100px;
 }
 
 /* .introduction {
@@ -184,4 +185,104 @@ section {
 .btn-github {
     color: var(--text-color-2);
     background-color: var(--btn-git);
+}
+
+/* Seção sobre */
+.sobre .subcontainer {
+    padding: 25px;
+}
+
+.subcontainer .right h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.subcontainer .right p {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.image {
+    background-color: black;
+    height: 500px;
+}
+
+/* Seção Projetos */
+.projetos {
+    background-color: #466f8e;
+}
+
+.projetos .container {
+    padding-top: 60px;
+}
+
+.projetos .subcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.projetos .subcontainer .heading-projetos {
+    background-color: var(--header-title);
+    height: 80px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+}
+
+.subcontainer .heading-projetos h2 {
+    font-size: 38px;
+}
+
+.subcontainer .heading-projetos ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.heading-projetos ul li{
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.heading-projetos ul li:hover {
+    color: var(--btn-likdn);
+}
+
+.projetos .subcontainer .amostra {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.subcontainer .amostra .projeto {
+    background-color: #fff;
+    width: 300px;
+    height: 350px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6fr 1fr 1fr 1fr;
+}
+
+.amostra .projeto img {
+    height: 70px;
+}
+
+.amostra .projeto h3 {
+    color: var(--text-color-2);
+    font-size: 20px;
+    text-align: center;
+    background-color: var(--btn-title);
+    
+}
+
+.amostra .projeto a {
+    color: var(--text-color-2);
+    font-size: 19px;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--btn-link);
 }
