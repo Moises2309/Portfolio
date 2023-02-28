@@ -9,11 +9,14 @@ font-family: 'Noto Sans', sans-serif; */
     box-sizing: border-box;
     --bg-color: #314560;
     --bg-stack: rgb(163, 163, 163);
-    --bg-header: #e0f4ff72;
-    --bg-header-pj: #223843;
+    --bg-header: #44beff72;
+    --bg-header-pj: #a4a4a4;
     --text-color: #fff;
     --text-color-2: #223843;
+    --text-color-link: #00a9fe;
+    --text-span: #71ff92;
     --text-header-title: #e0f4ff;
+    --text-h2-after: rgb(189, 189, 189);
     --btn-title: #466f8e;
     --btn-link: #a2b4c5;
     --btn-likdn: #0a66c2;
@@ -41,18 +44,27 @@ body {
     display: inline-block;
 }
 
+section {
+    width: 100%;
+    height: 100vh;
+}
+
 /* Cabeçalho */
 header {
     width: 100%;
-    height: 50px;
-    background-color: var(--bg-header);
-    padding: 0px 25px;
+    height: 40px;
+    padding: 20px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    top: 0;
     z-index: 1000;
 }
+/* 
+main {
+    padding: 40px 0;
+} */
 
 header a.titleLink,
 li a {
@@ -64,33 +76,52 @@ header a.titleLink {
     font-size: 24px;
     font-weight: 900;
     letter-spacing: 1px;
+    background: linear-gradient(
+        to right,
+        rgb(29, 168, 255) 0%,
+        rgb(0, 247, 255) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 header ul {
     list-style: none;
     display: flex;
-}
-
-li a:hover {
-    background-color: var(--btn-link);
-    border: 1px solid yellow;
+    gap: 30px;
 }
 
 li a {
     color: var(--text-color);
-    padding: 14px;
+    text-shadow: -2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 li a:hover {
-    color: var(--header-title);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+a#download {
+    color: var(--text-color);
+    text-decoration: none;
+    background: linear-gradient(
+        to right,
+        rgb(29, 168, 255) 0%,
+        rgb(1, 98, 255) 100%
+    );
+    border-radius: 100px;
+    padding: 5px 15px;
+}
+
+li a#download:hover {
+    color: var(--text-color);
+    border: none;
+}
+
+li a#download:active {
+    filter: drop-shadow(1px 1px 5px rgb(255, 255, 255));
 }
 
 /* Seção inicio  */
-section {
-    width: 100%;
-    height: 100vh;
-}
-
 .inicio {
     position: relative;
     overflow: hidden;
@@ -137,7 +168,6 @@ section {
 
 .container {
     width: 85%;
-    height: 90vh;
     margin: auto;
     padding: 100px 0;
     position: relative;
@@ -156,7 +186,7 @@ section {
 }
 
 .introduction .text {
-    color: var(--text-color-2);
+    color: var(--text-color);
 }
 
 .introduction .text h1 {
@@ -191,17 +221,17 @@ section {
 }
 
 .btn-sobre {
+    color: var(--text-color-2);
     background-color: #fff;
-    color: var(--text-color);
 }
 
 .btn-linkedin {
-    color: var(--text-color-2);
+    color: var(--text-color);
     background-color: var(--btn-likdn);
 }
 
 .btn-github {
-    color: var(--text-color-2);
+    color: var(--text-color);
     background-color: var(--btn-git);
 }
 
@@ -226,23 +256,28 @@ section {
         1;
     width: 65%;
     height: 570px;
-    padding: 30px 0 60px 0;
+    padding: 30px 0 20px 0;
     margin-left: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    gap: 25px;
 }
 
 .sobre .left img {
-    border-radius: 30px;
-    /* width: 300px; */
+    /* border-radius: 30px; */
+    width: 300px;
+    height: 400px;
+    background-color: #009ddc;
+    margin-bottom: 30px;
+}
+
+.sobre .left a {
+    margin-top: 20px;
 }
 
 .subcontainer .right h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .subcontainer .right p {
@@ -251,9 +286,6 @@ section {
 }
 
 /* Seção Projetos */
-/* .projetos {
-    
-} */
 
 .projetos .container {
     padding-top: 80px;
@@ -265,36 +297,9 @@ section {
     gap: 50px;
 }
 
-.projetos .heading-projetos {
-    background-color: var(--bg-header-pj);
-    width: max-content;
-    height: 70px;
-    margin: 0 auto;
-    padding: 0 20px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 30px;
-}
-
-.heading-projetos h2 {
-    font-size: 38px;
-}
-
-.heading-projetos ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.heading-projetos ul li {
-    color: var(--text-color);
-    font-size: 20px;
-}
-
-.heading-projetos ul li:hover {
-    color: var(--btn-likdn);
+.projetos h2::after {
+    content: " ";
+    bottom: -5px;
 }
 
 .projetos .amostra {
@@ -348,13 +353,19 @@ section {
 
 .projeto .stacks-projeto {
     background-color: white;
-    padding: 10px;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    align-items: baseline;
+    gap: 10px;
 }
 
 .stack {
     color: var(--text-color);
+    font-size: 12px;
     background-color: var(--bg-stack);
-    width: max-content;
     padding: 5px 10px;
     border-radius: 30px;
 }
@@ -365,4 +376,52 @@ section {
     text-align: center;
     text-decoration: none;
     background-color: var(--btn-link);
+}
+
+/* Seção de habilidades */
+h2 {
+    font-size: 48px;
+    position: relative;
+}
+
+h2::after {
+    content: " ";
+    background-color: var(--text-h2-after);
+    width: 320px;
+    height: 2px;
+    padding: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.habilidades .subcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.hab-amostra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.hab-amostra .hab {
+    background: linear-gradient(
+        153deg,
+        rgba(52, 17, 182, 1) 0%,
+        rgba(0, 157, 220, 1) 90%
+    );
+    border-radius: 30px;
+    width: 200px;
+    height: 210px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
