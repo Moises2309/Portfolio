@@ -30,13 +30,13 @@ body {
 
 section {
     width: 100%;
-    min-height: 98vh;
+    min-height: 100vh;
 }
 
 .container {
     width: 85%;
     margin: 0 auto;
-    padding: 6rem 0 9rem 0;
+    padding: 6rem 0 6rem 0;
     position: relative;
     z-index: 100;
 }
@@ -166,8 +166,8 @@ li a:hover {
 
 .inicio .elipse1 {
     background: var(--bg-color-3);
-    width: 18rem;
-    height: 18rem;
+    width: 23rem;
+    height: 23rem;
     border-radius: 50%;
     position: absolute;
     bottom: -100px;
@@ -181,31 +181,30 @@ li a:hover {
         rgba(149, 32, 221, 1) 30%,
         rgb(0, 140, 255) 100%
     );
-    width: 37rem;
-    height: 37rem;
+    width: 44rem;
+    height: 44rem;
     border-radius: 50%;
     position: absolute;
-    bottom: -135px;
-    right: -50px;
+    bottom: -150px;
+    right: -60px;
     z-index: 1;
 }
 
 .inicio .introduction {
-    margin-top: 4rem;
+    margin-top: 9rem;
 }
 
 .introduction .text h1 {
-    font-size: 2.7rem;
+    font-size: 3.3rem;
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin-bottom: 40px;
     text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
     line-height: 3rem;
-    white-space: nowrap;
 }
 
 .introduction .text h1 span {
     color: var(--text-span);
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
@@ -213,18 +212,18 @@ li a:hover {
 }
 
 .introduction .text p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     letter-spacing: 1.3px;
     line-height: 30px;
     text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
 }
 
 .introduction .text p:last-child {
-    margin-top: 0.7rem;
+    margin-top: 16px;
 }
 
 .introduction .buttons {
-    margin-top: 3rem;
+    margin-top: 80px;
     width: 100%;
     display: flex;
     gap: 1.25rem;
@@ -262,8 +261,8 @@ li a:hover {
         rgba(0, 255, 158, 1) 0%,
         rgba(0, 108, 255, 1) 100%
     );
-    width: 25rem;
-    height: 25rem;
+    width: 27rem;
+    height: 27rem;
     border-radius: 50%;
     position: absolute;
     z-index: -1;
@@ -274,6 +273,10 @@ li a:hover {
     color: var(--text-color-2);
     background-color: var(--bg-color-2);
 }
+
+/* .sobre .container {
+    padding-top: 10rem;
+} */
 
 .sobre .subcontainer {
     justify-items: center;
@@ -298,8 +301,8 @@ li a:hover {
 .sobre .left img {
     background-color: #009ddc;
     border-radius: 20px;
-    width: 18.75rem;
-    height: 22rem;
+    width: 100%;
+    height: 300px;
 }
 
 .sobre .right h2 {
@@ -468,21 +471,88 @@ li a:hover {
     text-transform: uppercase;
 }
 
-@media screen and (width: 1270px) {
-    .inicio .text h1 {
-        font-size: 2rem;
+@media screen and (max-width: 1600px) {
+    .inicio .introduction {
+        margin-top: 7rem;
     }
-    
+
+    .inicio .elipse1 {
+        width: 19rem;
+        height: 19rem;
+    }
+    .inicio .elipse2 {
+        width: 37rem;
+        height: 37rem;
+    }
+
+    .inicio .text h1 {
+        font-size: 2.7rem;
+    }
+
+    .introduction .text h1 span {
+        font-size: 3rem;
+    }
+
+    .inicio .right {
+        padding-top: 1rem;
+    }
+
+    .inicio .right .elipse3 {
+        width: 23rem;
+        height: 23rem;
+    }
+}
+
+@media screen and (max-width: 1270px) {
+    .inicio .text h1 {
+        font-size: 2.5rem;
+    }
+
     .inicio .text h1 span {
         font-size: 2.5rem;
     }
-    
+
     .inicio .text p {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
-    .inicio .buttons .btn {
+    /* .inicio .buttons .btn {
         padding: 0.5rem 1.2rem;
+    } */
+
+    /* .inicio .elipse1 {
+        width: 15rem;
+        height: 15rem;
+    }
+    .inicio .elipse2 {
+        width: 37rem;
+        height: 37rem;
+    }
+    .inicio .right .elipse3 {
+        width: 20rem;
+        height: 20rem; 
+    } */
+}
+
+@media screen and (max-width: 1024px) {
+    .inicio .introduction {
+        margin-top: 5rem;
+    }
+
+    .inicio .text h1 {
+        font-size: 2rem;
+    }
+
+    .inicio .text h1 span {
+        font-size: 2rem;
+    }
+
+    .inicio .text p {
+        font-size: 1.3rem;
+    }
+
+    .inicio .introduction .buttons {
+        font-size: 0.84rem;
     }
 
     .inicio .elipse1 {
@@ -490,49 +560,85 @@ li a:hover {
         height: 15rem;
     }
     .inicio .elipse2 {
-        width: 30rem;
-        height: 30rem;
+        width: 33rem;
+        height: 33rem;
     }
+
+    .inicio .right {
+        padding-top: 1rem;
+    }
+
     .inicio .right .elipse3 {
         width: 20rem;
         height: 20rem;
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 870px) {
+    section {
+        min-height: 100vh;
+    }
+    
+    header {
+        padding: 0.3rem 0.5rem;
+    }
+
+    header ul {
+        gap: 0.5rem;
+    }
+
     .container {
-        padding: 5rem 0;
+        padding-top: 60px;
     }
 
     .subcontainer {
         grid-template-columns: 1fr;
+        gap: 50px;
     }
 
-    header {
-        padding: 0.3rem 1rem;
+    .inicio .right {
+        display: none;
+        margin-top: 100px;
     }
 
-    header ul {
-        gap: 1rem;
+    .inicio .introduction {
+        margin-top: 6rem;
+    }
+
+    .inicio .text h1 {
+        font-size: 2.8rem;
+    }
+
+    .inicio .text h1 span {
+        font-size: 3rem;
+    }
+
+    .inicio .text p {
+        font-size: 1.6rem;
+    }
+
+    .inicio .introduction .buttons {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inicio .elipse1 {
+        width: 15rem;
+        height: 15rem;
+    }
+    .inicio .elipse2 {
+        width: 33rem;
+        height: 33rem;
+    }
+
+    .projetos {
+        min-height: 0;
     }
 }
 
-@media screen and (max-width: 670px) {
-    header {
-        padding: 0.3rem .5rem;
-    }
-
-    header ul {
-        gap: .5rem;
+@media screen and (max-width: 640px) {
+    html {
+        font-size: 14px;
     }
 }
-
-/* @media screen and (max-width: 620px) {
-    header {
-        padding: 0.3rem .5rem;
-    }
-
-    header ul {
-        gap: .5rem;
-    }
-} */
