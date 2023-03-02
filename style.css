@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Gloock&family=Noto+Sans:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
 
-/* font-family: 'Gloock', serif;
-font-family: 'Noto Sans', sans-serif; */
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
 
 * {
     margin: 0;
@@ -14,7 +14,7 @@ font-family: 'Noto Sans', sans-serif; */
     --bg-header: rgba(0, 0, 0, 0.2);
     --text-color: #fff;
     --text-color-2: #000000;
-    --text-span: #71ff92;
+    --text-span: #0bf0ab;
     --text-h2-after: rgb(255, 255, 255);
     --text-h2-after-2: rgb(0, 0, 0);
     --btn-likedin: #0a66c2;
@@ -23,7 +23,7 @@ font-family: 'Noto Sans', sans-serif; */
 
 body {
     color: var(--text-color);
-    font-family: "Noto Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: var(--bg-color);
 }
 
@@ -69,11 +69,32 @@ a {
     text-decoration: none;
 }
 
+a#download {
+    color: var(--text-color);
+    background: linear-gradient(90deg, rgb(73, 128, 255) 0%, rgb(10, 202, 173) 89%);
+    border-radius: 50px;
+    padding: 5px 15px;
+    text-shadow: -2px 2px 5px rgba(0, 0, 0, 1);
+    white-space: nowrap;
+}
+
+a#download:hover {
+    color: var(--text-color);
+    border: none;
+    box-shadow: 0px 0px 5px 1px rgb(255, 255, 255);
+}
+
+a#download:active {
+    filter: drop-shadow(1px 1px 5px rgb(255, 255, 255));
+}
+
+
 /* Cabeçalho */
 header {
     width: 100%;
     padding: 5px 30px;
     background-color: var(--bg-header);
+    backdrop-filter: blur(2px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,17 +104,11 @@ header {
 }
 
 header a.titleLink {
-    color: #fff;
+    color: var(--text-color);
     font-size: 24px;
     font-weight: 900;
     letter-spacing: 1px;
-    background: linear-gradient(
-        to right,
-        rgb(29, 168, 255) 0%,
-        rgb(0, 247, 255) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
 }
 
 header ul {
@@ -110,27 +125,6 @@ li a {
 
 li a:hover {
     border-bottom: 1px solid rgb(255, 255, 255);
-}
-
-a#download {
-    color: var(--text-color);
-    background: linear-gradient(
-        to right,
-        rgb(29, 168, 255) 0%,
-        rgb(1, 98, 255) 100%
-    );
-    border-radius: 50px;
-    padding: 5px 15px;
-}
-
-li a#download:hover {
-    color: var(--text-color);
-    border: none;
-    box-shadow: 0px 0px 5px 1px rgb(255, 255, 255);
-}
-
-li a#download:active {
-    filter: drop-shadow(1px 1px 5px rgb(255, 255, 255));
 }
 
 /* Seção inicio  */
@@ -154,7 +148,11 @@ li a#download:active {
 }
 
 .inicio .elipse2 {
-    background: var(--bg-color-3);
+    background: linear-gradient(
+        145deg,
+        rgba(149, 32, 221, 1) 30%,
+        rgb(0, 140, 255) 100%
+    );
     width: 600px;
     height: 600px;
     border-radius: 50%;
@@ -167,8 +165,8 @@ li a#download:active {
 .inicio .elipse3 {
     background: linear-gradient(
         145deg,
-        rgba(52, 17, 182, 1) 20%,
-        rgba(0, 157, 220, 1) 100%
+        rgba(0, 255, 158, 1) 0%,
+        rgba(0, 108, 255, 1) 100%
     );
     width: 400px;
     height: 400px;
@@ -185,22 +183,26 @@ li a#download:active {
 
 .introduction .text h1 {
     font-size: 44px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
+    line-height: 55px;
 }
 
 .introduction .text h1 span {
     color: var(--text-span);
-    font-family: "Gloock", serif;
+    font-size: 50px;
+    font-family: "Poppins", sans-serif;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
+    text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
 }
 
 .introduction .text p {
     font-size: 20px;
     letter-spacing: 1.3px;
     line-height: 30px;
+    text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
 }
 
 .introduction .text p:last-child {
@@ -217,16 +219,19 @@ li a#download:active {
 .btn-sobre {
     color: var(--text-color-2);
     background-color: #fff;
+    box-shadow: -3px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
 .btn-linkedin {
     color: var(--text-color);
     background-color: var(--btn-likedin);
+    box-shadow: -3px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
 .btn-github {
     color: var(--text-color);
     background-color: var(--btn-git);
+    box-shadow: -3px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* Seção sobre */
@@ -236,7 +241,7 @@ li a#download:active {
 }
 
 .sobre .container {
-    padding-top: 100px;
+    padding-top: 155px;
 }
 
 .sobre .subcontainer .left {
@@ -251,51 +256,48 @@ li a#download:active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
 }
 
 .sobre .left img {
-    /* border-radius: 30px; */
     background-color: #009ddc;
     border-radius: 20px;
     width: 300px;
     height: 350px;
-    margin-bottom: 35px;
 }
 
-.sobre .left a {
-    margin-top: 36px;
-}
-
-.subcontainer .right h2 {
+.sobre .right h2 {
     margin-bottom: 20px;
 }
 
-.subcontainer .right p {
+.sobre .right p {
     font-size: 20px;
-    letter-spacing: 1px;
+    font-weight: 400;
+    letter-spacing: 1.5x;
     width: 630px;
     margin-bottom: 32px;
 }
 
 /* Seção Projetos */
 .projetos {
-    /* height: 100vh; */
-    /* overflow: hidden; */
-}
-
-.projetos .container {
-    /* padding-top: 135px; */
+    min-height: 105vh;
 }
 
 .projetos .subcontainer {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 80px;
+}
+
+.projetos h2 {
+    text-shadow: -2px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 .projetos h2::after {
     background-color: var(--bg-color-2);
     bottom: -5px;
+    box-shadow: -3px 2px 5px 0px rgba(0, 0, 0, 0.7);
 }
 
 .projetos .amostra {
@@ -313,6 +315,7 @@ li a#download:active {
     background-color: var(--bg-color-2);
     border: 5px solid var(--bg-color-3);
     border-radius: 30px;
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
 }
 
 .projeto .conteudo {
@@ -377,11 +380,7 @@ li a#download:active {
 
 .projeto .btn-pj {
     color: var(--text-color);
-    background: linear-gradient(
-        to right,
-        rgb(29, 168, 255) 0%,
-        rgb(0, 247, 255) 100%
-    );
+    background: var(--bg-color);
     border-radius: 0 0 20px 0;
     width: 100%;
 }
@@ -390,12 +389,13 @@ li a#download:active {
 .habilidades {
     color: var(--text-color-2);
     background-color: var(--bg-color-2);
+    min-height: 110vh;
 }
 
 .habilidades .subcontainer {
     display: flex;
     flex-direction: column;
-    gap: 45px;
+    gap: 80px;
 }
 
 .subcontainer .hab-amostra {
@@ -412,15 +412,35 @@ li a#download:active {
     border-radius: 30px;
     width: 200px;
     height: 200px;
-    padding: 27px 30px;
+    padding: 32px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
+    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.7);
 }
 
 .hab img {
     width: 100%;
     height: 100%;
+}
+
+.hab h3 {
+    text-transform: uppercase;
+}
+
+/* Seção Contato */
+.contato {
+    min-height: 100vh;
+}
+
+.contato h2 {
+    text-shadow: -2px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+.contato h2::after {
+    background-color: var(--bg-color-2);
+    bottom: -5px;
+    box-shadow: -3px 2px 5px 0px rgba(0, 0, 0, 0.7);
 }
