@@ -7,7 +7,7 @@ font-family: 'Roboto', sans-serif; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --bg-color: #537fe7;
+    --bg-color: #00b1f2;
     --bg-color-2: #e9f8f9;
     --bg-color-3: #181823;
     --bg-stack: rgb(163, 163, 163);
@@ -25,12 +25,18 @@ body {
     color: var(--text-color);
     font-family: "Poppins", sans-serif;
     background-color: var(--bg-color);
+    position: relative;
+}
+
+section {
+    width: 100%;
+    min-height: 98vh;
 }
 
 .container {
     width: 85%;
     margin: 0 auto;
-    padding: 100px 0 155px 0;
+    padding: 6rem 0 9rem 0;
     position: relative;
     z-index: 100;
 }
@@ -43,21 +49,20 @@ body {
 .btn {
     text-align: center;
     text-decoration: none;
-    width: 130px;
-    padding: 10px 0;
+    padding: 0.6rem 1.8rem;
     border: none;
     border-radius: 50px;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 2.5rem;
     position: relative;
 }
 
 h2::after {
     content: " ";
     background-color: var(--bg-color-3);
-    width: 250px;
+    width: 15rem;
     height: 2px;
     padding: 1px;
     position: absolute;
@@ -71,9 +76,13 @@ a {
 
 a#download {
     color: var(--text-color);
-    background: linear-gradient(90deg, rgb(73, 128, 255) 0%, rgb(10, 202, 173) 89%);
+    background: linear-gradient(
+        90deg,
+        rgb(73, 128, 255) 0%,
+        rgb(10, 202, 173) 89%
+    );
     border-radius: 50px;
-    padding: 5px 15px;
+    padding: 0.3rem 0.9rem;
     text-shadow: -2px 2px 5px rgba(0, 0, 0, 1);
     white-space: nowrap;
 }
@@ -88,13 +97,35 @@ a#download:active {
     filter: drop-shadow(1px 1px 5px rgb(255, 255, 255));
 }
 
+/* Botão linkedin */
+.btn-linkedin-2 {
+    color: var(--text-color);
+    background-color: var(--btn-likedin);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10000;
+}
+
+.disable {
+    display: none;
+}
 
 /* Cabeçalho */
 header {
     width: 100%;
-    padding: 5px 30px;
+    padding: 0.3rem 2rem;
     background-color: var(--bg-header);
-    backdrop-filter: blur(2px);
+    /* backdrop-filter: blur(2px); */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,7 +136,7 @@ header {
 
 header a.titleLink {
     color: var(--text-color);
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: 1px;
     text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
@@ -114,13 +145,13 @@ header a.titleLink {
 header ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 2rem;
 }
 
 li a {
     color: var(--text-color);
     text-shadow: -2px 2px 5px rgba(0, 0, 0, 0.7);
-    padding-bottom: 10px;
+    padding-bottom: 0.65rem;
 }
 
 li a:hover {
@@ -129,17 +160,14 @@ li a:hover {
 
 /* Seção inicio  */
 .inicio {
-    width: 100%;
-    height: 100vh;
     position: relative;
     overflow: hidden;
-    /* margin-top: 45px; */
 }
 
 .inicio .elipse1 {
     background: var(--bg-color-3);
-    width: 300px;
-    height: 300px;
+    width: 18rem;
+    height: 18rem;
     border-radius: 50%;
     position: absolute;
     bottom: -100px;
@@ -153,8 +181,8 @@ li a:hover {
         rgba(149, 32, 221, 1) 30%,
         rgb(0, 140, 255) 100%
     );
-    width: 600px;
-    height: 600px;
+    width: 37rem;
+    height: 37rem;
     border-radius: 50%;
     position: absolute;
     bottom: -135px;
@@ -162,36 +190,22 @@ li a:hover {
     z-index: 1;
 }
 
-.inicio .elipse3 {
-    background: linear-gradient(
-        145deg,
-        rgba(0, 255, 158, 1) 0%,
-        rgba(0, 108, 255, 1) 100%
-    );
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    position: absolute;
-    top: 170px;
-    right: 250px;
-    z-index: 1;
-}
-
 .inicio .introduction {
-    margin-top: 70px;
+    margin-top: 4rem;
 }
 
 .introduction .text h1 {
-    font-size: 44px;
+    font-size: 2.7rem;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
     text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
-    line-height: 55px;
+    line-height: 3rem;
+    white-space: nowrap;
 }
 
 .introduction .text h1 span {
     color: var(--text-span);
-    font-size: 50px;
+    font-size: 3rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
@@ -199,21 +213,21 @@ li a:hover {
 }
 
 .introduction .text p {
-    font-size: 20px;
+    font-size: 1.2rem;
     letter-spacing: 1.3px;
     line-height: 30px;
     text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
 }
 
 .introduction .text p:last-child {
-    margin-top: 5px;
+    margin-top: 0.7rem;
 }
 
 .introduction .buttons {
-    margin-top: 50px;
+    margin-top: 3rem;
     width: 100%;
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .btn-sobre {
@@ -234,14 +248,35 @@ li a:hover {
     box-shadow: -3px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
+.inicio .right {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.inicio .right .elipse3 {
+    background: linear-gradient(
+        145deg,
+        rgba(0, 255, 158, 1) 0%,
+        rgba(0, 108, 255, 1) 100%
+    );
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+}
+
 /* Seção sobre */
 .sobre {
     color: var(--text-color-2);
     background-color: var(--bg-color-2);
 }
 
-.sobre .container {
-    padding-top: 155px;
+.sobre .subcontainer {
+    justify-items: center;
 }
 
 .sobre .subcontainer .left {
@@ -249,34 +284,33 @@ li a:hover {
     background-color: var(--bg-color-3);
     border-radius: 30px;
     width: max-content;
-    height: 530px;
-    padding: 30px 25px;
-    margin-left: 160px;
+    height: max-content;
+    padding: 1.5rem;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.4);
 }
 
 .sobre .left img {
     background-color: #009ddc;
     border-radius: 20px;
-    width: 300px;
-    height: 350px;
+    width: 18.75rem;
+    height: 22rem;
 }
 
 .sobre .right h2 {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .sobre .right p {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 400;
     letter-spacing: 1.5x;
-    width: 630px;
-    margin-bottom: 32px;
+    margin-bottom: 1.25rem;
 }
 
 /* Seção Projetos */
@@ -287,7 +321,7 @@ li a:hover {
 .projetos .subcontainer {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 5rem;
 }
 
 .projetos h2 {
@@ -380,7 +414,11 @@ li a:hover {
 
 .projeto .btn-pj {
     color: var(--text-color);
-    background: var(--bg-color);
+    background: linear-gradient(
+        90deg,
+        rgb(73, 128, 255) 0%,
+        rgb(10, 202, 173) 89%
+    );
     border-radius: 0 0 20px 0;
     width: 100%;
 }
@@ -389,7 +427,7 @@ li a:hover {
 .habilidades {
     color: var(--text-color-2);
     background-color: var(--bg-color-2);
-    min-height: 110vh;
+    min-height: 105vh;
 }
 
 .habilidades .subcontainer {
@@ -430,17 +468,71 @@ li a:hover {
     text-transform: uppercase;
 }
 
-/* Seção Contato */
-.contato {
-    min-height: 100vh;
+@media screen and (width: 1270px) {
+    .inicio .text h1 {
+        font-size: 2rem;
+    }
+    
+    .inicio .text h1 span {
+        font-size: 2.5rem;
+    }
+    
+    .inicio .text p {
+        font-size: 1rem;
+    }
+
+    .inicio .buttons .btn {
+        padding: 0.5rem 1.2rem;
+    }
+
+    .inicio .elipse1 {
+        width: 15rem;
+        height: 15rem;
+    }
+    .inicio .elipse2 {
+        width: 30rem;
+        height: 30rem;
+    }
+    .inicio .right .elipse3 {
+        width: 20rem;
+        height: 20rem;
+    }
 }
 
-.contato h2 {
-    text-shadow: -2px 3px 5px rgba(0, 0, 0, 0.7);
+@media screen and (max-width: 800px) {
+    .container {
+        padding: 5rem 0;
+    }
+
+    .subcontainer {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 0.3rem 1rem;
+    }
+
+    header ul {
+        gap: 1rem;
+    }
 }
 
-.contato h2::after {
-    background-color: var(--bg-color-2);
-    bottom: -5px;
-    box-shadow: -3px 2px 5px 0px rgba(0, 0, 0, 0.7);
+@media screen and (max-width: 670px) {
+    header {
+        padding: 0.3rem .5rem;
+    }
+
+    header ul {
+        gap: .5rem;
+    }
 }
+
+/* @media screen and (max-width: 620px) {
+    header {
+        padding: 0.3rem .5rem;
+    }
+
+    header ul {
+        gap: .5rem;
+    }
+} */
