@@ -12,6 +12,7 @@ font-family: 'Roboto', sans-serif; */
     --bg-color-3: #181823;
     --bg-stack: rgb(163, 163, 163);
     --bg-header: rgba(0, 0, 0, 0.2);
+    --bg-header-mobile: rgba(0, 0, 0, 0.6);
     --text-color: #fff;
     --text-color-2: #000000;
     --text-span: #0bf0ab;
@@ -142,6 +143,11 @@ header a.titleLink {
     text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
 }
 
+header nav {
+    display: flex;
+    flex-direction: column;
+}
+
 header ul {
     list-style: none;
     display: flex;
@@ -156,6 +162,10 @@ li a {
 
 li a:hover {
     border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+#btn-mobile {
+    display: none;
 }
 
 /* Seção inicio  */
@@ -312,7 +322,6 @@ li a:hover {
 .sobre .right p {
     font-size: 1.25rem;
     font-weight: 400;
-    letter-spacing: 1.5x;
     margin-bottom: 1.25rem;
 }
 
@@ -378,7 +387,7 @@ li a:hover {
 }
 
 .conteudo-texto .titulo-projeto {
-    font-size: 18px;
+    font-size: 1.125rem;
     text-align: center;
 }
 
@@ -399,7 +408,7 @@ li a:hover {
 
 .stack p {
     color: var(--text-color);
-    font-size: 12px;
+    font-size: 0.75rem;
     text-shadow: 0px 3px 5px black;
 }
 
@@ -515,23 +524,6 @@ li a:hover {
     .inicio .text p {
         font-size: 1.3rem;
     }
-
-    /* .inicio .buttons .btn {
-        padding: 0.5rem 1.2rem;
-    } */
-
-    /* .inicio .elipse1 {
-        width: 15rem;
-        height: 15rem;
-    }
-    .inicio .elipse2 {
-        width: 37rem;
-        height: 37rem;
-    }
-    .inicio .right .elipse3 {
-        width: 20rem;
-        height: 20rem; 
-    } */
 }
 
 @media screen and (max-width: 1024px) {
@@ -578,7 +570,7 @@ li a:hover {
     section {
         min-height: 100vh;
     }
-    
+
     header {
         padding: 0.3rem 0.5rem;
     }
@@ -640,5 +632,111 @@ li a:hover {
 @media screen and (max-width: 640px) {
     html {
         font-size: 14px;
+    }
+
+    header {
+        padding: 7px 15px;
+    }
+
+    header a.titleLink {
+        font-size: 2.3rem;
+    }
+
+    #btn-mobile {
+        color: var(--text-color);
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: flex;
+        padding: .5rem 5px;
+        gap: .5rem;
+    }
+
+    #hamburger {
+        border-top: 2px solid white;
+    }
+
+    #hamburger::after,
+    #hamburger::before {
+        content: '';
+        background-color: currentColor;
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin-top: 5px;
+        transition: .6s;
+        position: relative;
+    }
+
+    nav.active #hamburger {
+        border-top-color: transparent;
+    }
+
+    nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    nav.active #hamburger::after {
+        top: -7px;
+        transform: rotate(-135deg);
+    }
+
+    header nav ul{
+        display: block;
+        font-size: 1.6rem;
+        text-align: center;
+        background-color: var(--bg-header-mobile);
+        height: 0px;
+        position: absolute;
+        top: 61.4px;
+        right: -1px;
+        z-index: 10000;
+        overflow: hidden;
+        transition: 0.6s;
+    }
+
+    header nav.active ul {
+        height: 260px;
+        padding: 10px;
+        display: block;
+    }
+
+    header nav li {
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 7px;
+    }
+    
+    header nav li:active {
+        border-bottom: 1px solid #828282;
+    }
+
+    header nav a:active {
+        color: #828282;
+    }
+
+    header nav .li-download {
+        border-bottom: none;
+        margin-top: 20px;
+    }
+
+    header nav a:hover {
+        border-bottom: none;
+    }
+    
+    .inicio .introduction {
+        margin-top: 3rem;
+    }
+
+    .inicio .text h1 {
+        font-size: 2.5rem;
+    }
+
+    .inicio .text h1 span {
+        font-size: 2.7rem;
+    }
+
+    .inicio .text p {
+        font-size: 1.6rem;
     }
 }
