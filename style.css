@@ -97,7 +97,7 @@ a {
     text-decoration: none;
 }
 
-button#download {
+a#download {
     color: var(--text-color);
     font-size: 0.8rem;
     background: linear-gradient(
@@ -113,13 +113,13 @@ button#download {
     outline: none;
 }
 
-button#download:hover {
+a#download:hover {
     color: var(--text-color);
     border: none;
     box-shadow: 0px 0px 5px 1px rgb(255, 255, 255);
 }
 
-button#download:active {
+a#download:active {
     filter: drop-shadow(1px 1px 5px rgb(255, 255, 255));
 }
 
@@ -797,10 +797,9 @@ li a.active {
     nav .li-download {
         border-bottom: none;
         margin-top: 20px;
-        width: 60%;
     }
 
-    button#download {
+    a#download {
         font-size: 1.4rem;
     }
 
