@@ -7,6 +7,9 @@ font-family: 'Roboto', sans-serif; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
     --bg-color: #0aa1d8;
     --bg-color-2: #e9f8f9;
     --bg-color-3: #181823;
@@ -130,10 +133,7 @@ a#download:active {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    /* box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 1); */
-
     display: none;
-
     position: fixed;
     bottom: 15px;
     right: 15px;
@@ -316,7 +316,6 @@ li a.active {
     height: auto;
     clip-path: circle();
     filter: saturate(1.25);
-    /* filter: grayscale(1); */
 }
 
 /* Seção sobre */
@@ -324,10 +323,6 @@ li a.active {
     color: var(--text-color-2);
     background-color: var(--bg-color-2);
 }
-
-/* .sobre .container {
-    padding-top: 10rem;
-} */
 
 .sobre .container {
     width: 70%;
@@ -342,7 +337,6 @@ li a.active {
     color: var(--text-color);
     background-color: var(--bg-color-3);
     border-radius: 30px;
-    /* width: max-content; */
     height: max-content;
     padding: 1.5rem;
     display: flex;
