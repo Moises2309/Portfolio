@@ -7,14 +7,15 @@ font-family: 'Roboto', sans-serif; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --bg-color: #00b1f2;
+    --bg-color: #0aa1d8;
     --bg-color-2: #e9f8f9;
     --bg-color-3: #181823;
     --bg-stack: rgb(163, 163, 163);
-    --bg-header: rgba(0, 0, 0, 0.2);
-    --bg-header-mobile: rgba(0, 0, 0, 0.6);
+    --bg-header: rgba(0, 0, 0, 0.7);
+    --bg-header-mobile: rgb(0, 0, 0);
     --text-color: #fff;
     --text-color-2: #000000;
+    --text-menu-section: #2fedfb;
     --text-span: #0bf0ab;
     --text-h2-after: rgb(255, 255, 255);
     --text-h2-after-2: rgb(0, 0, 0);
@@ -27,6 +28,27 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: var(--bg-color);
     position: relative;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.625rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: var(--bg-color-3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0bf0ab;
+    /* border-radius: 10px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #06bd86;
 }
 
 section {
@@ -75,26 +97,29 @@ a {
     text-decoration: none;
 }
 
-a#download {
+button#download {
     color: var(--text-color);
+    font-size: 0.8rem;
     background: linear-gradient(
         90deg,
         rgb(73, 128, 255) 0%,
         rgb(10, 202, 173) 89%
     );
+    border: none;
     border-radius: 50px;
-    padding: 0.3rem 0.9rem;
+    padding: 0.4rem 0.9rem;
     text-shadow: -2px 2px 5px rgba(0, 0, 0, 1);
     white-space: nowrap;
+    outline: none;
 }
 
-a#download:hover {
+button#download:hover {
     color: var(--text-color);
     border: none;
     box-shadow: 0px 0px 5px 1px rgb(255, 255, 255);
 }
 
-a#download:active {
+button#download:active {
     filter: drop-shadow(1px 1px 5px rgb(255, 255, 255));
 }
 
@@ -105,11 +130,9 @@ a#download:active {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 1);
+    /* box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 1); */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
 
     position: fixed;
     bottom: 15px;
@@ -117,8 +140,10 @@ a#download:active {
     z-index: 10000;
 }
 
-.disable {
-    display: none;
+.btn-linkedin-2.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Cabeçalho */
@@ -162,6 +187,10 @@ li a {
 
 li a:hover {
     border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+li a.active {
+    color: var(--text-menu-section);
 }
 
 #btn-mobile {
@@ -208,7 +237,7 @@ li a:hover {
     font-size: 3.3rem;
     font-weight: 500;
     margin-bottom: 40px;
-    text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 0px 0px 15px #000000;
     line-height: 3rem;
 }
 
@@ -218,14 +247,14 @@ li a:hover {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 0px 0px 15px #000000;
 }
 
 .introduction .text p {
     font-size: 1.4rem;
     letter-spacing: 1.3px;
     line-height: 30px;
-    text-shadow: -2px 3px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: -2px 2px 5px rgba(0, 0, 0, 1);
 }
 
 .introduction .text p:last-child {
@@ -243,18 +272,21 @@ li a:hover {
     color: var(--text-color-2);
     background-color: #fff;
     box-shadow: -3px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
 }
 
 .btn-linkedin {
     color: var(--text-color);
     background-color: var(--btn-likedin);
     box-shadow: -3px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
 }
 
 .btn-github {
     color: var(--text-color);
     background-color: var(--btn-git);
     box-shadow: -3px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
 }
 
 .inicio .right {
@@ -278,6 +310,15 @@ li a:hover {
     z-index: -1;
 }
 
+.inicio .right img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    clip-path: circle();
+    filter: saturate(1.25);
+    /* filter: grayscale(1); */
+}
+
 /* Seção sobre */
 .sobre {
     color: var(--text-color-2);
@@ -288,18 +329,22 @@ li a:hover {
     padding-top: 10rem;
 } */
 
+.sobre .container {
+    width: 70%;
+}
+
 .sobre .subcontainer {
     justify-items: center;
+    align-items: center;
 }
 
 .sobre .subcontainer .left {
     color: var(--text-color);
     background-color: var(--bg-color-3);
     border-radius: 30px;
-    width: max-content;
+    /* width: max-content; */
     height: max-content;
     padding: 1.5rem;
-    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -312,7 +357,12 @@ li a:hover {
     background-color: #009ddc;
     border-radius: 20px;
     width: 100%;
-    height: 300px;
+    max-width: 300px;
+    height: auto;
+}
+
+.sobre .right {
+    max-width: 34.375rem;
 }
 
 .sobre .right h2 {
@@ -419,6 +469,7 @@ li a:hover {
 
 .projeto .btn-git-pj {
     color: var(--text-color);
+    padding: 0.5rem 0.5rem;
     background: var(--btn-git);
     border-radius: 0 0 0 20px;
     width: 100%;
@@ -524,6 +575,10 @@ li a:hover {
     .inicio .text p {
         font-size: 1.3rem;
     }
+
+    .sobre .container {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -627,6 +682,14 @@ li a:hover {
     .projetos {
         min-height: 0;
     }
+
+    .sobre .subcontainer {
+        grid-template-rows: auto auto;
+    }
+
+    .sobre .subcontainer .right {
+        order: -1;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -649,8 +712,8 @@ li a:hover {
         background: none;
         cursor: pointer;
         display: flex;
-        padding: .5rem 5px;
-        gap: .5rem;
+        padding: 0.5rem 5px;
+        gap: 0.5rem;
     }
 
     #hamburger {
@@ -659,13 +722,13 @@ li a:hover {
 
     #hamburger::after,
     #hamburger::before {
-        content: '';
+        content: "";
         background-color: currentColor;
         display: block;
         width: 20px;
         height: 2px;
         margin-top: 5px;
-        transition: .6s;
+        transition: 0.6s;
         position: relative;
     }
 
@@ -682,61 +745,142 @@ li a:hover {
         transform: rotate(-135deg);
     }
 
-    header nav ul{
-        display: block;
+    header {
+        background-color: var(--bg-header-mobile);
+    }
+
+    header nav ul {
         font-size: 1.6rem;
         text-align: center;
         background-color: var(--bg-header-mobile);
+        width: 100%;
         height: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: absolute;
         top: 61.4px;
-        right: -1px;
+        right: 0;
         z-index: 10000;
         overflow: hidden;
         transition: 0.6s;
     }
 
     header nav.active ul {
-        height: 260px;
+        height: 390px;
         padding: 10px;
-        display: block;
     }
 
-    header nav li {
+    nav li {
+        width: 100%;
+    }
+
+    nav li a {
         border-bottom: 1px solid #dcdcdc;
-        padding-bottom: 7px;
-    }
-    
-    header nav li:active {
-        border-bottom: 1px solid #828282;
+        padding: 15px 0;
+        display: block;
+        width: 100%;
     }
 
-    header nav a:active {
+    nav li a:active {
+        border-bottom: 1px solid #ffffff;
+    }
+
+    nav a:active {
         color: #828282;
     }
 
-    header nav .li-download {
+    nav .li-download {
         border-bottom: none;
         margin-top: 20px;
+        width: 60%;
     }
 
-    header nav a:hover {
-        border-bottom: none;
+    button#download {
+        font-size: 1.4rem;
     }
-    
+
     .inicio .introduction {
         margin-top: 3rem;
     }
 
     .inicio .text h1 {
-        font-size: 2.5rem;
+        font-size: 4rem;
     }
 
     .inicio .text h1 span {
-        font-size: 2.7rem;
+        font-size: 4rem;
+        display: block;
+        margin: 20px 0 30px 0;
     }
 
     .inicio .text p {
         font-size: 1.6rem;
+    }
+
+    .habilidades {
+        min-height: 100vh;
+    }
+
+    .subcontainer .hab-amostra {
+        gap: 20px;
+    }
+
+    .hab-amostra .hab {
+        width: 13rem;
+        height: 13rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .inicio .container {
+        width: 90%;
+    }
+
+    .inicio .text h1 {
+        font-size: 3rem;
+    }
+
+    .inicio .text h1 span {
+        font-size: 3.5rem;
+        margin: 10px 0 20px 0;
+    }
+
+    .inicio .text p {
+        font-size: 1.5rem;
+    }
+
+    .inicio .buttons {
+        gap: 30px;
+    }
+
+    .hab-amostra .hab {
+        width: 8rem;
+        height: 8rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .inicio .container {
+        width: 98%;
+    }
+
+    .inicio .text h1 {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .inicio .text h1 span {
+        font-size: 3rem;
+        margin: 10px 0 20px 0;
+    }
+
+    .inicio .text p {
+        font-size: 1.5rem;
+    }
+
+    .inicio .buttons {
+        margin-top: 10px;
+        gap: 30px;
     }
 }
