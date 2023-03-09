@@ -312,7 +312,7 @@ li a.active {
 
 .inicio .right img {
     width: 100%;
-    max-width: 340px;
+    max-width: 390px;
     height: auto;
     clip-path: circle();
     filter: saturate(1.25);
@@ -558,8 +558,8 @@ li a.active {
     }
 
     .inicio .right .elipse3 {
-        width: 23rem;
-        height: 23rem;
+        width: 27rem;
+        height: 27rem;
     }
 }
 
@@ -618,6 +618,10 @@ li a.active {
     .inicio .right .elipse3 {
         width: 20rem;
         height: 20rem;
+    }
+
+    .inicio .right img {
+        width: 300px;
     }
 }
 
